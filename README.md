@@ -42,3 +42,4 @@ roleRef:
   a. When logging in with the CLI for the first time, OpenShift creates a ~/.kube/config file if one does not already exist.
   b. With your new ClusterRole and RoleBindings in place, that kubeconfig file should now have the correct permissions to be used with the TVK UI
   
+  <img src="./pics/tvk-login.png" width="450"> 
