@@ -21,7 +21,7 @@
   ```
       
 3. Create a Cluster-wide RoleBinding for your created ClusterRole
-  a. Here we use an oath provider and so we used the system:authenticated:oauth group.  You can use a different group based on your provider. 
+  a. Here we use an oath provider and so we used the system:authenticated:oauth group.  In the case that you are using a different provider, find the group based on your provider. 
 
 ```
 kind: RoleBinding
@@ -41,5 +41,6 @@ roleRef:
 4. Log into OCP with user account (non-admin)
   a. When logging in with the CLI for the first time, OpenShift creates a ~/.kube/config file if one does not already exist.
   b. With your new ClusterRole and RoleBindings in place, that kubeconfig file should now have the correct permissions to be used with the TVK UI
+  c. Everyday you'll need to update the token in your kubeconfig file.  Copy token from OCP login.  
   
   <img src="./pics/tvk-login.png" width="450"> 
