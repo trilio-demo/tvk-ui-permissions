@@ -19,6 +19,14 @@
        resources: ["policies"]
       verbs: ["create"]
   ```
+  
+ Permission CRDs:
+ Backup
+ Restore
+ Target
+ Policy
+ Hook
+ BackupPlan
       
 3. Create a Cluster-wide RoleBinding for your created ClusterRole
   a. Here we use an oath provider and so we used the system:authenticated:oauth group.  In the case that you are using a different provider, find the group based on your provider. 
