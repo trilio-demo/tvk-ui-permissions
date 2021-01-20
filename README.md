@@ -23,15 +23,15 @@ The following ClusterRole shows the minimum level of permissions required to acc
       verbs: ["create"]
   ```
   
- **You may want to expand these permissions to include some or all of the resources.
+ **You may want to expand these permissions to include some or all of the resources.**
  
- CRDs:
+ **CRDs:
  Backup
  Restore
  Target
  Policy
  Hook
- BackupPlan
+ BackupPlan**
  
    ```
      Example:
