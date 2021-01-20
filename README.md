@@ -17,7 +17,7 @@ To access the UI and these feature you will need to create a ClusterRole and a C
 ## Cluster Permissions
 
 The TrilioVault for Kubernetes UI leverages existing cluster permissions to access the UI. At a minimum users logging into 
-the UI need to have read permissions for the TrilioVault group resource.The following ClusterRole shows the minimum level 
+the UI need to have read permissions for the TrilioVault group resource. The following ClusterRole shows the minimum level 
 of permissions required to access the TVK management console.
 
   ```
