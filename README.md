@@ -92,7 +92,7 @@ roleRef:
   ```
   
 ## 5. Log into OCP with user account (non-admin)
-  a. When logging in with the CLI for the first time, OpenShift creates a ~/.kube/config file if one does not already exist.
+  a. When logging in with the CLI for the first time, OpenShift creates a **<em>~/.kube/config</em>** file if one does not already exist.
   b. With your new ClusterRole and RoleBindings in place, that kubeconfig file should now have the correct permissions to be used with the TVK UI
   c. Everyday you'll need to update the token in your kubeconfig file.  Copy token from OCP login.  
   
