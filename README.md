@@ -3,7 +3,7 @@
 
 ## TrilioVault for Kubernetes UI
 
-<img src="./pics/crd.png" width="450"> 
+<img src="./pics/ui.png" width="450"> 
 
 ## Cluster Permissions
 
