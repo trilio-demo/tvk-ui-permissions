@@ -86,7 +86,7 @@ of permissions required to access the TVK management console.
 ## Create a Cluster-wide RoleBinding for your newly created ClusterRole
 
 
-Here we use an oath provider and so we used the **<em>system:authenticated:oauth</em>** group.  In the case that you are using a different provider, find the group based on your provider.
+This cluster uses an oath provider and so we used the **<em>system:authenticated:oauth</em>** group.  In the case that you are using a different provider, find the group based on your provider.
 
 ```
 kind: RoleBinding
