@@ -74,7 +74,7 @@ The following ClusterRole shows the minimum level of permissions required to acc
 ## 4. Create a Cluster-wide RoleBinding for your newly created ClusterRole
 
 
-**Here we use an oath provider and so we used the system:authenticated:oauth group.  In the case that you are using a different provider, find the group based on your provider. 
+**Here we use an oath provider and so we used the <em>system:authenticated:oauth</em> group.  In the case that you are using a different provider, find the group based on your provider.**
 
 ```
 kind: RoleBinding
