@@ -1,6 +1,10 @@
 # ClusterRoleBinding and Kubeconfig setup 
 
 
+## TrilioVault for Kubernetes UI
+
+<img src="./pics/crd.png" width="450"> 
+
 ## Cluster Permissions
 
 The TrilioVault for Kubernetes UI leverages existing cluster permissions to access the UI. No special RBAC need to be created for accessing the UI. 
