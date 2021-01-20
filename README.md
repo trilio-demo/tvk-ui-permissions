@@ -3,6 +3,18 @@
 
 ## TrilioVault for Kubernetes UI
 
+In this blog we would like to show you how to enable permissions on your cluster that will allow RBAC for the TrilioVault for Kubernetes UI.
+
+The TrilioVault for Kubernetes UI offers some great features. 
+
+  * Discovery of K8s applications
+  * Intuitive management of Backup & Restore Plans in real-time across clouds
+  * Simple workflows for managing application consistent backups & restores
+  * Ability to migrate application data and metadata to other clouds
+  * Monitoring of overall health & performance metrics
+  
+To access the UI and these feature you will need to create a ClusterRole and a ClusterRoleBinding.
+
 <img src="./pics/ui.png" width="450"> 
 
 ## Cluster Permissions
