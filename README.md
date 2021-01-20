@@ -48,7 +48,7 @@ The following ClusterRole shows the minimum level of permissions required to acc
       verbs: ["create"]
   ```
   
-  **For full permissions you could create it like this...
+  **For full permissions you could create it like this...**
   
   ```
      Example:
