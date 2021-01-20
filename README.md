@@ -65,7 +65,7 @@ The following ClusterRole shows the minimum level of permissions required to acc
   **Navigate to User Management -> Roles**
   
   
-  Create a new ClusterRole for all namespaces
+  Create a new **<em>ClusterRole</em>** for all namespaces
   
   
 
