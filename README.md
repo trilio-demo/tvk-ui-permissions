@@ -62,8 +62,10 @@ The following ClusterRole shows the minimum level of permissions required to acc
 ## 3. Steps to create your ClusterRole in the OCP UI
 
 
-  a. Navigate to User Management -> Roles
-  b. Create a new ClusterRole for all namespaces
+  **Navigate to User Management -> Roles**
+  
+  
+  Create a new ClusterRole for all namespaces
   
   
 
