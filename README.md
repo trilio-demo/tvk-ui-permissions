@@ -1,8 +1,5 @@
 # ClusterRoleBinding and Kubeconfig setup 
 
-
-## TrilioVault for Kubernetes UI
-
 In this blog we would like to show you how to enable permissions on your cluster that will allow RBAC for the TrilioVault for Kubernetes UI.
 
 The TrilioVault for Kubernetes UI offers some great features. 
