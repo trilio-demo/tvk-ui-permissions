@@ -25,7 +25,7 @@ The following ClusterRole shows the minimum level of permissions required to acc
   
  **You may want to expand these permissions to include some or all of the resources.**
  
- <img src="./pics/CRDs.png" width="450"> 
+ <img src="./pics/crd.png" width="450"> 
  
 
  
