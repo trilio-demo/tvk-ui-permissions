@@ -51,6 +51,17 @@ patch
 update
 watch
 ```
+
+```
+colinmccarthy@Colins-MacBook-Pro ~ % oc get crd | grep -i trilio
+backupplans.triliovault.trilio.io                           2021-01-13T08:42:49Z
+backups.triliovault.trilio.io                               2021-01-13T08:42:51Z
+hooks.triliovault.trilio.io                                 2021-01-13T08:42:53Z
+licenses.triliovault.trilio.io                              2021-01-13T08:42:55Z
+policies.triliovault.trilio.io                              2021-01-13T08:42:45Z
+restores.triliovault.trilio.io                              2021-01-13T08:42:47Z
+targets.triliovault.trilio.io                               2021-01-13T08:42:48Z
+```
  
 
  
