@@ -80,7 +80,7 @@ watch
     rules:
      - apiGroups: ["triliovault.trilio.io"]
        resources: ["*"]
-      verbs: ["get", "list", "create"]
+      verbs: ["get", "list", "create", "delete"]
   ```
  
 
