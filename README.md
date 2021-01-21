@@ -39,6 +39,19 @@ of permissions required to access the TVK management console.
  
  <img src="./pics/crd.png" width="450"> 
  
+ ```
+ api-resources
+ 
+create
+delete
+deletecollection
+get
+list
+patch
+update
+watch
+```
+ 
 
  
    ```
