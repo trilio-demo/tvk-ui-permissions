@@ -69,6 +69,15 @@ watch
       verbs: ["create"]
   ```
   
+  **For delete permissions you could create it like this...**  
+  
+  
+```
+     - apiGroups: ["triliovault.trilio.io"]
+       resources: ["policies", "backups", "backupplans"]
+       verbs: ["delete"]
+ ```
+  
   **For full permissions you could create it like this...**
   
   ```
