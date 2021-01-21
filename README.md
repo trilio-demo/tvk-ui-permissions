@@ -52,7 +52,7 @@ of permissions required to access the TVK management console.
        resources: ["*"]
       verbs: ["get", "list"]
      - apiGroups: ["triliovault.trilio.io"]
-       resources: ["policies", "targets", "restore", "backup", "restore"]
+       resources: ["policies", "targets", "restore", "backups", "backupplans"]
       verbs: ["create"]
   ```
   
