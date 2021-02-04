@@ -1,4 +1,4 @@
-# ClusterRoleBinding and Kubeconfig setup 
+# TrilioVault for Kubernetes UI Permissions
 
 The TrilioVault for Kubernetes UI offers some great features. 
 
