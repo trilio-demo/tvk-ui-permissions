@@ -20,9 +20,9 @@ The TrilioVault for Kubernetes UI leverages existing cluster permissions to acce
 the UI need to have read permissions for the TrilioVault group resource. The following ClusterRole shows the minimum level 
 of permissions required to access the TVK management console.
 
+  **Example 1:**
   ```
-     Example:
-        apiVersion: rbac.authorization.k8s.io/v1
+    apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
      metadata:
        name: svcs-role
@@ -39,9 +39,10 @@ of permissions required to access the TVK management console.
  
  <img src="./pics/crd.png" width="450"> 
  
- ```
- api-resources
- 
+Verbs give users and groups permission to execute actions associated with a resource.  
+
+Verbs: 
+ ``` 
 create
 delete
 deletecollection
@@ -51,23 +52,25 @@ patch
 update
 watch
 ```
-
+Resources:
 ```
-colinmccarthy@Colins-MacBook-Pro ~ % oc get crd | grep -i trilio
-backupplans.triliovault.trilio.io                           2021-01-13T08:42:49Z
-backups.triliovault.trilio.io                               2021-01-13T08:42:51Z
-hooks.triliovault.trilio.io                                 2021-01-13T08:42:53Z
-licenses.triliovault.trilio.io                              2021-01-13T08:42:55Z
-policies.triliovault.trilio.io                              2021-01-13T08:42:45Z
-restores.triliovault.trilio.io                              2021-01-13T08:42:47Z
-targets.triliovault.trilio.io                               2021-01-13T08:42:48Z
+backupplans                        
+backups                            
+hooks                                
+licenses                         
+policies                           
+restores                            
+targets                             
 ```
+ A list of resources can be gathered by running command:
+ ```
+oc get crd | grep -i trilio
+ ```
  
 
- 
+ **Example 2 - Create Only:**
    ```
-     Example:
-        apiVersion: rbac.authorization.k8s.io/v1
+    apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
      metadata:
        name: svcs-role
@@ -80,27 +83,30 @@ targets.triliovault.trilio.io                               2021-01-13T08:42:48Z
       verbs: ["create"]
   ```
   
-  **For delete permissions you could create it like this...**  
-  
+  **Example 3 - Delete Only:**  
   
 ```
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+     metadata:
+       name: svcs-role
+    rules:
      - apiGroups: ["triliovault.trilio.io"]
        resources: ["policies", "backups", "backupplans"]
        verbs: ["delete"]
  ```
   
-  **For full permissions you could create it like this...**
+  **Example 4 - Full Permissions:**
   
   ```
-     Example:
-        apiVersion: rbac.authorization.k8s.io/v1
+    apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
      metadata:
        name: svcs-role
     rules:
      - apiGroups: ["triliovault.trilio.io"]
        resources: ["*"]
-      verbs: ["get", "list", "create", "delete"]
+      verbs: ["*"]
   ```
  
 
@@ -139,7 +145,16 @@ roleRef:
 ## Log into OCP with user account (non-admin)
   When logging in with the CLI for the first time, OpenShift creates a **<em>~/.kube/config</em>** file if one does not already exist.
   
+ 
+  Access kubeconfig file with command: 
+    
+  ```
+  cat ~/.kube/config
+  ```
+  Copy kubeconfig file contents into file on your local machine
+  
   With your new ClusterRole and RoleBindings in place, that kubeconfig file should now have the correct permissions to be used with the TVK UI
+  
   
   
   
