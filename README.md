@@ -163,4 +163,4 @@ roleRef:
   
   
   
-  <img src="./pics/tvk-login.png" width="450"> 
+  <img src="./pics/tvk-login.png" width="600"> 
