@@ -9,7 +9,7 @@ The TrilioVault for Kubernetes UI offers some great features.
   * Monitoring of overall health & performance metrics
 
 
-<img src="./pics/ui.png" width="800"> 
+<img src="./pics/ui.png" width="600"> 
 
 
 ## What this blog is about
