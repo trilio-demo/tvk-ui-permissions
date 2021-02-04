@@ -1,7 +1,5 @@
 # ClusterRoleBinding and Kubeconfig setup 
 
-In this blog we would like to show you how to enable permissions on your cluster that will allow RBAC for the TrilioVault for Kubernetes UI. When you install TrilioVault, a service account is created with permissions to access TVK and the UI.  For setting up permission for the 'system:authenticated:oauth' group, follow the below process.
-
 The TrilioVault for Kubernetes UI offers some great features. 
 
   * Discovery of K8s applications
@@ -11,11 +9,15 @@ The TrilioVault for Kubernetes UI offers some great features.
   * Monitoring of overall health & performance metrics
 
 
-To access the UI and these feature you will need to create a ClusterRole and a ClusterRoleBinding.
-
 <img src="./pics/ui.png" width="450"> 
 
+
+## What this blog is about
+In this blog we would like to show you how to enable permissions on your cluster that will allow RBAC for the TrilioVault for Kubernetes UI. When you install TrilioVault, a service account is created with permissions to access TVK and the UI.  For setting up permission for the 'system:authenticated:oauth' group, follow the below process.
+
+
 ## Cluster Permissions
+To access the UI and these feature you will need to create a ClusterRole and a ClusterRoleBinding.
 
 The TrilioVault for Kubernetes UI leverages existing cluster permissions to access the UI. At a minimum users logging into 
 the UI need to have read permissions for the TrilioVault group resource. The following ClusterRole shows the minimum level 
