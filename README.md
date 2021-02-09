@@ -18,6 +18,13 @@ In this blog we will show you how to enable permissions on your cluster that wil
 
 On your cluster, configuring an Oauth identity provider, such as GitHub, to validate usernames and passwords may be something you want to do.  If this is the case, some extra steps are required.  For instance, you will need to set up a ClusterRole, as well as, a ClusterRoleBinding.  This blog details the process for setting up that configuration.  
 
+Bringing Dev and Ops together is an important part of Kubernetes, with teams working on the same tools and infrastructure.  Trilio integrates into K8s based roles and permissions, versus having to use a separate RBAC policy framework. Each user is able to perform TVK operations based on their specific RBAC within the K8s system.
+
+
+# Scenario
+Bob the cluster admin wants to be the sole creator of backup targets (since he is responsible for storage resources and management within his org), while John the developer or app admin will want to consume that backup target for storing his backups. Here are the permissions that Bob would set for himself and for John. Now when john logs in - he won’t be able to create the target, but will be able to choose the targets created by Bob to backup applications into.
+
+
 ## Cluster Permissions
 To access the UI and these feature you will need to create a ClusterRole and a ClusterRoleBinding.
 
@@ -73,7 +80,9 @@ oc get crd | grep -i trilio
  ```
  
 
- **Example 2 - Create Only:**
+ **Example 2 - Bob, Cluster Admin:**
+ Bob needs **create** and **delete** permissions for **policies** to log into the Trilio UI, and **targets** and **licenses** because he is responsible for storage resources and management.  
+ 
    ```
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
@@ -84,11 +93,11 @@ oc get crd | grep -i trilio
        resources: ["*"]
       verbs: ["get", "list"]
      - apiGroups: ["triliovault.trilio.io"]
-       resources: ["policies", "targets", "restore", "backups", "backupplans"]
-      verbs: ["create"]
+       resources: ["policies", "targets", "licenses"]
+      verbs: ["create", "delete"]
   ```
   
-  **Example 3 - Delete Only:**  
+  **Example 3 - Jon, Lead Software Developer:**  
   
 ```
     apiVersion: rbac.authorization.k8s.io/v1
@@ -96,9 +105,12 @@ oc get crd | grep -i trilio
      metadata:
        name: svcs-role
     rules:
+      - apiGroups: ["triliovault.trilio.io"]
+       resources: ["*"]
+      verbs: ["get", "list"]
      - apiGroups: ["triliovault.trilio.io"]
-       resources: ["policies", "backups", "backupplans"]
-       verbs: ["delete"]
+       resources: ["policies", "backups", "restores", "backupplans", "hooks", ]
+      verbs: ["create", "delete"]
  ```
   
   **Example 4 - Full Permissions:**
