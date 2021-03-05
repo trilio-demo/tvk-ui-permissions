@@ -16,9 +16,9 @@ The TrilioVault for Kubernetes UI offers some great features.
 
 Bringing Dev and Ops together is an important part of Kubernetes with dev and ops teams working on the same tools and infrastructure. Trilio integrates into K8s based roles and permissions rather than having to use a separate RBAC policy framework. Each user can perform TVK operations based on their specific RBAC within the K8s system.
 
-In this blog we will ddemonstrate how to enable permissions on your cluster that will allow RBAC for the TrilioVault for Kubernetes UI. When you install TrilioVault, a service account is created with permissions to access TVK and the UI.  To set up permission for the 'system:authenticated:oauth' group, follow the below process.
+In this blog we will demonstrate how to enable permissions on your cluster that will allow RBAC for the TrilioVault for Kubernetes UI. When you install TrilioVault, a service account is created with permissions to access TVK and the UI.  
 
-You may want to configure an Oauth identity provider, such as GitHub, on your cluster to validate usernames and passwords.  If that is the case, some extra steps are required.  For instance, you will need to set up a ClusterRole, and a ClusterRoleBinding.  This blog details the process for setting up that configuration.  
+You may want to configure an Oauth identity provider, such as GitHub, on your cluster to validate usernames and passwords.  If that is the case, some extra steps are required.  For instance, you will need to set up a ClusterRole, and a ClusterRoleBinding. To set up permission for the 'system:authenticated:oauth' group.  This blog details the process for setting up that configuration.  
 
 
 
