@@ -24,7 +24,7 @@ You may want to configure an Oauth identity provider, such as GitHub, on your cl
 
 
 # Scenario
-Bob the cluster admin wants to be the sole creator of backup targets (since he is responsible for storage resources and management within his org), while John the developer or app admin will want to consume that backup target for storing his backups. Here are the permissions that Bob would set for himself and for John. Now when john logs in - he won’t be able to create the target, but will be able to choose the targets created by Bob to backup applications into.
+Bob the cluster admin wants to be the sole creator of backup targets, (since he is responsible for storage resources and management within his org). John the developer (or app admin) wants to consume that backup target to store his backups. Here are the permissions that Bob would set for himself and for John. Now when john logs in, -- he won’t be able to create the target, but will be able to choose the targets created by Bob to backup applications into.
 
 
 ## Cluster Permissions
@@ -76,14 +76,14 @@ policies
 restores                            
 targets                             
 ```
- A list of resources can be gathered by running command:
+ A list of resources can be gathered by running the command -
  ```
 oc get crd | grep -i trilio
  ```
  
 
  **Example 2 - Bob, Cluster Admin:**
- Bob needs **create** and **delete** permissions for **policies** to log into the Trilio UI, and **targets** and **licenses** because he is responsible for storage resources and management.  
+ Bob needs **create** and **delete** permissions for **policies** to log into the Trilio UI and **targets** and **licenses** because he is responsible for storage resources and management.  
  
    ```
     apiVersion: rbac.authorization.k8s.io/v1
@@ -144,7 +144,7 @@ oc get crd | grep -i trilio
 ## Create a Cluster-wide RoleBinding for your newly created ClusterRole
 
 
-This cluster uses an oath provider and so we used the **<em>system:authenticated:oauth</em>** group.  In the case that you are using a different provider, find the group based on your provider.
+This cluster uses an oath provider and so we used the **<em>system:authenticated:oauth</em>** group.  If you are using a different provider, find the group based on your provider.
 
 ```
 kind: RoleBinding
@@ -169,7 +169,7 @@ roleRef:
   ```
   cat ~/.kube/config
   ```
-  Copy kubeconfig file contents into file on your local machine
+  Copy the kubeconfig file contents into the file on your local machine
   
   With your new ClusterRole and RoleBindings in place, that kubeconfig file should now have the correct permissions to be used with the TVK UI
   
