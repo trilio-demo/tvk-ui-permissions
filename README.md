@@ -13,18 +13,16 @@ The TrilioVault for Kubernetes UI offers some great features.
 
 
 ## Synopsis
+Kubernetes is multi-tenant, allowing you to give specific permissions to users, such as access only to certain namespaces.  Trilio uses that same multi-tenant structure by natively integrating with kubernetes RBAC.  
 
-Bringing Dev and Ops together is an important part of Kubernetes with dev and ops teams working on the same tools and infrastructure. Trilio integrates into K8s based roles and permissions rather than having to use a separate RBAC policy framework. Each user can perform TVK operations based on their specific RBAC within the K8s system.
+Bringing Dev and Ops together is an important part of Kubernetes, with teams working on the same tools and infrastructure. RBAC (Role Based Access Controls) is a key pillar for multi-team collaboration between Dev and Ops on kubernetes. Trilio integrates natively into K8s based roles and permissions, removing the need for a separate RBAC policy framework. Each user can perform TVK operations based on their specific RBAC within the K8s system.
 
-In this blog we will demonstrate how to enable permissions on your cluster that will allow RBAC for the TrilioVault for Kubernetes UI. When you install TrilioVault, a service account is created with permissions to access TVK and the UI.  
-
-You may want to configure an Oauth identity provider, such as GitHub, on your cluster to validate usernames and passwords.  If that is the case, some extra steps are required.  For instance, you will need to set up a ClusterRole, and a ClusterRoleBinding. To set up permission for the 'system:authenticated:oauth' group.  This blog details the process for setting up that configuration.  
-
-
-
+Trilio provides native kubernetes backup and recovery of all application metadata, data, and kubernetes objects.  Trilio is built from the ground up to adhere to the core principles of kubernetes.  In this blog we will demonstrate how to integrate Trilio with kubernetes RBAC to leverage existing permissions on your cluster.  
+## How it works
+When you install TrilioVault, a service account is created with permissions to access TVK and the UI. However, you may want to configure an Oauth identity provider, such as GitHub, on your cluster to validate usernames and passwords.  If that is the case, some extra steps are required.  For instance, you will need to set up a ClusterRole, and a ClusterRoleBinding. To set up permission for the 'system:authenticated:oauth' group.  This blog details the process for setting up that configuration.  
 
 # Scenario
-Bob the cluster admin wants to be the sole creator of backup targets, (since he is responsible for storage resources and management within his org). John the developer (or app admin) wants to consume that backup target to store his backups. Here are the permissions that Bob would set for himself and for John. Now when john logs in, -- he won’t be able to create the target, but will be able to choose the targets created by Bob to backup applications into.
+Bob the cluster (Ops) admin wants to be the sole creator of backup targets, (since he is responsible for storage resources and management within his org). John  the developer (Dev) wants to consume that backup target to store his backups. Here are the permissions that Bob would set for himself and for John. Now when john logs in, -- he won’t be able to create the target, but will be able to choose the targets created by Bob to backup applications into.
 
 
 ## Cluster Permissions
