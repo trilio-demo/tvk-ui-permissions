@@ -1,6 +1,10 @@
 # TrilioVault for Kubernetes UI Permissions
 
-The TrilioVault for Kubernetes UI offers some great features. 
+TrilioVault for Kubernetes is an Application-centric backup and migration tool, empowering organizations to manage kubernetes backups with flexibility and industry standard compatibility.  With the use of kubernetes growing constantly it's important for teams to treat backups of applications as a day one priority, ensuring no loss of data, metadata, or kubernetes objects associated with these applications.  
+
+The following article outlines how to configure TVK UI RBAC to mirror that of an existing Oauth identity provider and the benefits of this configuration.  
+
+Before we get started, here's some of the unique features the TVK UI has to offer: 
 
   * Discovery of K8s applications
   * Intuitive management of Backup & Restore Plans in real-time across clouds
@@ -13,20 +17,20 @@ The TrilioVault for Kubernetes UI offers some great features.
 
 
 ## Synopsis
-Kubernetes is multi-tenant, allowing you to give specific permissions to users, such as access only to certain namespaces.  Trilio uses that same multi-tenant structure by natively integrating with kubernetes RBAC.  
+Kubernetes is especially popular with DevOps teams due to its multi-tenancy, resiliency, scalability, and efficient deployment methodology.  Today we'll be focused on multi-tenancy, which allows you to give specific permissions to users, such as access only to certain namespaces and resources.  Trilio uses that same multi-tenant structure by natively integrating with a key pillar of kubernetes, Role Based Access Control, RBAC.  
 
-Bringing Dev and Ops together is an important part of Kubernetes, with teams working on the same tools and infrastructure. RBAC (Role Based Access Controls) is a key pillar for multi-team collaboration between Dev and Ops on kubernetes. Trilio integrates natively into K8s based roles and permissions, removing the need for a separate RBAC policy framework. Each user can perform TVK operations based on their specific RBAC within the K8s system.
+Bringing Dev and Ops together is an important part of Kubernetes, with teams working on the same tools and infrastructure. RBAC is a key pillar for multi-team collaboration between Dev and Ops on kubernetes. Trilio integrates natively into K8s based roles and permissions, removing the need for a separate RBAC policy framework. Each user can perform TVK operations based on their specific RBAC within the K8s system.
 
 Trilio provides native kubernetes backup and recovery of all application metadata, data, and kubernetes objects.  Trilio is built from the ground up to adhere to the core principles of kubernetes.  In this blog we will demonstrate how to integrate Trilio with kubernetes RBAC to leverage existing permissions on your cluster.  
 ## How it works
 When you install TrilioVault, a service account is created with permissions to access TVK and the UI. However, you may want to configure an Oauth identity provider, such as GitHub, on your cluster to validate usernames and passwords.  If that is the case, some extra steps are required.  For instance, you will need to set up a ClusterRole, and a ClusterRoleBinding. To set up permission for the 'system:authenticated:oauth' group.  This blog details the process for setting up that configuration.  
 
 # Scenario
-Bob the cluster (Ops) admin wants to be the sole creator of backup targets, (since he is responsible for storage resources and management within his org). John  the developer (Dev) wants to consume that backup target to store his backups. Here are the permissions that Bob would set for himself and for John. Now when john logs in, -- he won’t be able to create the target, but will be able to choose the targets created by Bob to backup applications into.
+Bob the cluster (Ops) admin wants to be the sole creator of backup targets, (since he is responsible for storage resources and management within his org). John the developer (Dev) wants to consume that backup target to store his backups. Here are the permissions that Bob would set for himself and for John. Now when john logs in, -- he won’t be able to create the target but will be able to choose the targets created by Bob to backup applications into.
 
 
 ## Cluster Permissions
-To access the UI and these feature you will need to create a ClusterRole and a ClusterRoleBinding.
+To access the UI and these features you will need to create a ClusterRole and a ClusterRoleBinding.
 
 The TrilioVault for Kubernetes UI leverages existing cluster permissions to access the UI. At a minimum users logging into 
 the UI need to have read permissions for the TrilioVault group resource. The following ClusterRole shows the minimum level 
@@ -171,7 +175,8 @@ roleRef:
   
   With your new ClusterRole and RoleBindings in place, that kubeconfig file should now have the correct permissions to be used with the TVK UI
   
-  
-  
-  
   <img src="./pics/tvk-login.png" width="600"> 
+  
+  ## Conclusion
+  
+  
