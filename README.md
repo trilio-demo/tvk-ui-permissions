@@ -178,5 +178,8 @@ roleRef:
   <img src="./pics/tvk-login.png" width="600"> 
   
   ## Conclusion
+  In conclusion, TrilioVault for Kubernetes makes sense for a multi-tenant environment for different team members with different roles, as is commonly seen in organization.  This article outlined how to configure TVK UI RBAC to align with existing roles and permissions in kubernetes RBAC.  For more information on TrilioVault for Kubernetes, request a demo at https://www.trilio.io/request-demo/.  
+  
+  
   
   
