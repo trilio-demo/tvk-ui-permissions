@@ -17,7 +17,7 @@ Before we get started, here's some of the unique features the TVK UI has to offe
 
 
 ## Synopsis
-Kubernetes is especially popular with DevOps teams due to its multi-tenancy, resiliency, scalability, and efficient deployment methodology.  Today we'll be focused on multi-tenancy, which allows you to give specific permissions to users, such as access only to certain namespaces and resources.  Trilio uses that same multi-tenant structure by natively integrating with a key pillar of kubernetes, Role Based Access Control, RBAC.  
+Kubernetes is especially popular with DevOps teams due to its multi-tenancy, resiliency, scalability, and efficient deployment methodology.  Today we'll be focused on multi-tenancy, which allows you to give specific permissions to users, such as access only to certain namespaces and resources.  Trilio uses that same multi-tenant structure by natively integrating with a key pillar of kubernetes, Role Based Access Control (RBAC).  
 
 Bringing Dev and Ops together is an important part of Kubernetes, with teams working on the same tools and infrastructure. RBAC is a key pillar for multi-team collaboration between Dev and Ops on kubernetes. Trilio integrates natively into K8s based roles and permissions, removing the need for a separate RBAC policy framework. Each user can perform TVK operations based on their specific RBAC within the K8s system.
 
