@@ -26,7 +26,7 @@ Trilio provides native kubernetes backup and recovery of all application metadat
 When you install TrilioVault, a service account is created with permissions to access TVK and the UI. However, you may want to configure an Oauth identity provider, such as GitHub, on your cluster to validate usernames and passwords.  If that is the case, some extra steps are required.  For instance, you will need to set up a ClusterRole, and a ClusterRoleBinding. To set up permission for the 'system:authenticated:oauth' group.  This blog details the process for setting up that configuration.  
 
 # Scenario
-Bob the cluster (Ops) admin wants to be the sole creator of backup targets, (since he is responsible for storage resources and management within his org). John the developer (Dev) wants to consume that backup target to store his backups. Here are the permissions that Bob would set for himself and for John. Now when john logs in, -- he won’t be able to create the target but will be able to choose the targets created by Bob to backup applications into.
+Bob the cluster (Ops) admin wants to be the sole creator of backup targets and have backup/restore control (since he is responsible for storage resources and management within his org). John the developer (Dev) wants to consume that backup target to store his backups. Here are the permissions that Bob would set for himself and for John. Now when john logs in, -- he won’t be able to create the target but will be able to choose the targets created by Bob to backup applications into.
 
 
 ## Cluster Permissions
@@ -178,7 +178,13 @@ roleRef:
   <img src="./pics/tvk-login.png" width="600"> 
   
   ## Conclusion
-  In conclusion, TrilioVault for Kubernetes makes sense for a multi-tenant environment for different team members with different roles, as is commonly seen in organization.  This article outlined how to configure TVK UI RBAC to align with existing roles and permissions in kubernetes RBAC.  For more information on TrilioVault for Kubernetes, request a demo at https://www.trilio.io/request-demo/.  
+  In conclusion, TrilioVault for Kubernetes makes sense for a multi-tenant environment for different team members with different roles, as is commonly seen in organization.  This article outlined how to configure TVK UI RBAC to align with existing roles and permissions in kubernetes RBAC.  For more information on TrilioVault for Kubernetes...
+  
+  Request a demo: trilio.io/request-demo
+  
+  Download Trilio: trilio.io/plans 
+  
+  See Trilio Documentation: doc.trilio.io 
   
   
   
